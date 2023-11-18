@@ -1,0 +1,818 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Product Sans, sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+li {
+    list-style: none;
+}
+#flex{
+    position: fixed;
+    font-size: 45px;
+    bottom: 20px;
+    right: 20px;
+}
+#flex:hover{
+    color: yellow;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+body {
+    background: #252525;
+}
+.container {
+    width: 1444px;
+    margin: auto;
+    height: 100%;
+    background: white;
+}
+button{
+    padding: 7px 40px;
+    margin: 10px 0;
+    background-color: darkblue;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+}
+button:hover{
+    background-color: red;
+}
+
+@media(max-width: 768px ){
+    body{
+        background-color: #fff;
+    }
+    .container{
+        height: 100%;
+    }
+    p{font-size: 27px;}
+    .login{
+        position: relative;
+    }
+    .gach{
+        position: absolute;
+        bottom: 0;
+    }
+    .huongdan{
+        display: none;
+    }
+    .nav{
+        height: 60px;
+    }
+    .search{
+        position: absolute;
+        margin-left: 900px;
+        margin-top: 3px;
+    }
+    .dichvu1{
+        display: none;
+    }
+    .dichvu2{
+        position: absolute;
+        margin-left: -600px;
+        margin-top: 20px;
+    }
+    .dichvu3{
+        position: relative;
+        margin-left: 100px;
+        margin-top: 20px;
+    }
+    .vanban{width: 300px;}
+    .thongtin, .dieukhoan, .chinhsach, .taikhoan{
+        display: none;
+    }
+    .lienhe-footer{
+        margin-left: 550px;
+        margin-top: -80px;
+    }
+    .logo-footer img{
+        width: 350px;
+        margin-left: -100px;
+    }
+}
+@media(max-width:414px ){
+    a{
+        font-size: 35px;
+    }
+    .sigup{
+        margin-left: -135px;
+    }
+    .dichvu2{
+        margin-left: -700px;
+        margin-top: -1px;
+    }
+    .dichvu3{
+        margin-top: -1px;
+    }
+    .nav{
+        height: 75px;
+    }
+    .nav a{
+        font-size: 30px;
+    }
+    #right,#right2,#right3,#right4,#right5{
+        display: none;
+    }
+    .danhsach, .tieude-menu, .slide-show{
+        display: none;
+    }
+    .banner2{
+        background: url(img/Rectangle\ 38.png) no-repeat;
+        width: 1400px;
+        background-size: cover;
+        height: 500px;
+        margin: 10px auto;
+    }
+    .item{
+        flex-wrap: wrap;
+        width: 800px;
+    }
+    .ao1{
+        width: 800px;
+    }
+
+
+}
+/* ================================================sigup */
+.sigup a, .huongdan a {
+    padding: 10px 15px;
+    border: 1px solid lightgray;
+    transition: 0.5s;
+}
+.sigup a:hover{
+    background-color: blue;
+    color: #fff;
+}
+.huongdan a:hover{
+    background-color: blue;
+    color: #fff;
+}
+.login {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 135px;
+}
+
+.fix {
+    margin-left: -5px;
+}
+#fix1 {
+    position: absolute;
+    top: -1px;
+}
+.gach {
+    border-bottom: 1px solid lightgray;
+    position: absolute;
+    width: 1444px;
+    margin: auto;
+    margin-left: -135px;
+    margin-top: 28px;
+}
+/* ====================================================logo */
+.logo-hang img {
+    padding: 20px 130px;
+    margin-left: 150px;
+}
+.logo {
+    display: flex;
+    justify-content: space-evenly;
+}
+.border {
+    border: 1px solid;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    text-align: center;
+    margin-right: 100px;
+    float: left;
+}
+.vanban {
+    float: right;
+    position: absolute;
+    margin: 10px;
+    margin-left: 70px;
+}
+#bot {
+    margin-top: 5px;
+}
+.dichvu {
+    margin-right: 200px;
+    padding: 40px 0;
+}
+/* ====================================================menu */
+nav {
+    background-color: #252525;
+    height: 58px;
+    width: 100%;
+}
+.menu {
+    float: left;
+    padding: 0 135px;
+}
+.menu li {
+    border: 1px solid #8B8B8B;
+    display: inline-block;
+    padding: 19px 15px;
+}
+.menu ul ul{
+    position: absolute;
+    z-index: 99;
+    padding: 0 7px;
+    background-color: rgb(30, 80, 92);
+    width: 200px;
+    margin-top: 20px;
+    margin-left: -15px;
+    display: none;
+}
+.menu ul ul li{
+    border: none;
+    display: block;
+}
+.menu ul ul li:hover a{
+    color: #111111;
+    text-decoration: underline;
+}
+.menu ul li:hover ul{
+    display: block;
+}
+.menu ul ul li:hover{
+    background: white;
+}
+.menu ul li:hover a {
+    color: white;
+}
+.menu a {
+    color: #8B8B8B;
+}
+#fixx {
+    color: white;
+}
+input {
+    position: relative;
+    width: 232px;
+    height: 40px;
+    left: 200px;
+    top: 9px;
+    padding: 10px;
+    font-size: 20px;
+}
+input:focus{
+    background-color: aqua;
+}
+.timkiem img{
+    background-color: aqua;
+    width: 50px;
+    height: 40px;
+    padding: 7px;
+    position: absolute;
+    margin-left: 432px;
+    margin-top: -31px;
+    border-radius: 0 10px 10px 0;
+}
+.timkiem img:hover{
+    background-color: yellow;
+}
+/* ====================================================banner */
+.banner-tong {
+    display: flex;
+    width: 1444px;
+    margin: auto;
+    justify-content: space-evenly;
+    margin-left: -65px;
+}
+.nav-botton {
+    margin-left: 122px;
+    margin-top: 20px;
+}
+.tieude-menu {
+    text-align: center;
+    padding: 10px;
+    width: 279px;
+    background: #353535;
+    color: #8B8B8B;
+}
+.danhsach{
+    width: 279px;
+    height: 463px;
+}
+.danhsach li {
+    border: 1px solid #8B8B8B;
+    padding: 16px 20px;
+    background: #353535;
+    cursor: pointer;
+}
+.danhsach ul li a {
+    color: #ACACAC;
+    transition: .5s;
+}
+.danhsach ul ul{
+    z-index: 99;
+    width: 279px;
+    position: absolute;
+    margin-left: 258px;
+    margin-top: -35px;
+    display: none;
+}
+.danhsach ul li:hover ul{
+    display: block;
+}
+.danhsach ul li:hover {
+    background-color: #575757;
+    width: 282px;
+}
+.danhsach ul li:hover a {
+    color: white;
+    text-decoration: underline;
+}
+#right {
+    position: absolute;
+    margin-left: 180px;
+    text-decoration: none;
+}
+#right2 {
+    position: absolute;
+    margin-left: 167px;
+    text-decoration: none;
+}
+#right3 {
+    position: absolute;
+    margin-left: 172px;
+    text-decoration: none;
+}
+#right4 {
+    position: absolute;
+    margin-left: 160px;
+    text-decoration: none;
+}
+#right5 {
+    position: absolute;
+    margin-left: 130px;
+    text-decoration: none;
+}
+.banner img {
+    margin-left: -40px;
+}
+.slide-show{
+    position: relative;
+    border: 1px solid;
+    overflow: hidden;
+    width: 800px;
+    height: 454px;
+    margin-top: 20px;
+}
+.slide-wrapper{
+    width: 2940px;
+    -webkit-animation: slide 10s linear infinite;
+}
+.slide{
+    float: left;
+    width: 833px;
+    height: 454px;
+}
+@-webkit-keyframes slide{
+    20%{margin-left: 0px;}
+    30%{margin-left: -840px;}
+    50%{margin-left: -840px;}
+    60%{margin-left: -1680px;}
+    70%{margin-left: -1680px;}
+    80%{margin-left: -840px;}
+    90%{margin-left: -840px;}
+    100%{margin-left: 0px;}
+}
+/* ====================================================san pham 1 */
+.tieude {
+    padding: 15px 120px;
+}
+.gach-tieude {
+    width: 1170px;
+    height: 0;
+    border: 1px solid;
+    margin: auto;
+}
+.hang1 {
+    background: #E7E7E7;
+    border-radius: 10px;
+    width: 1408px;
+    height: 555px;
+    margin: auto;
+}
+.spm {
+    width: 1213px;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+.ao1 {
+    background: url(img/Rectangle\ 12.png);
+    width: 276px;
+    height: 348px;
+    text-align: center;
+    position: relative;
+}
+.ao1:hover {
+    background: url(img/h1\ 1.jpg) no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+.ao2 {
+    background: url(img/Rectangle\ 11.png);
+    width: 276px;
+    height: 348px;
+    transition: .25s;
+    text-align: center;
+}
+
+.ao2:hover {
+    background: url(img/h1\ 2.png);
+    cursor: pointer;
+}
+
+.ao3 {
+    background: url(img/Rectangle\ 13.png);
+    width: 276px;
+    height: 348px;
+    transition: .25s;
+    text-align: center;
+}
+
+.ao3:hover {
+    background: url(img/h1\ 3.png);
+    cursor: pointer;
+}
+
+.ao4 {
+    background: url(img/Rectangle\ 14.png);
+    width: 276px;
+    height: 348px;
+    transition: .25s;
+    text-align: center;
+}
+
+.ao4:hover {
+    background: url(img/h1\ 4.png);
+    cursor: pointer;
+}
+.khung{
+    border: 1px solid;
+    width: 300px;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+.tt {
+    margin-top: 350px;
+}
+
+h3 {
+    padding: 15px;
+}
+
+span {
+    font-weight: bold;
+    color: red;
+}
+
+/* ====================================================san pham 2 */
+.hang2 {
+    background: #E7E7E7;
+    border-radius: 10px;
+    width: 1408px;
+    height: 555px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.spnb {
+    width: 1213px;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tt-hang2 {
+    margin-top: 300px;
+}
+.hang2-ao1 {
+    background: url(img/Rectangle\ 15.png);
+    width: 203px;
+    height: 280px;
+    text-align: center;
+}
+
+.hang2-ao1:hover {
+    background: url(img/h2\ 1.jpg);
+    background-size: cover;
+    cursor: pointer;
+}
+
+.hang2-ao2 {
+    background: url(img/Rectangle\ 15\ \(1\).png);
+    width: 203px;
+    height: 280px;
+    text-align: center;
+}
+
+.hang2-ao2:hover {
+    background: url(img/h2\ 2.jpg);
+    background-size: cover;
+    cursor: pointer;
+}
+
+.hang2-ao3 {
+    background: url(img/Rectangle\ 16.png);
+    width: 203px;
+    height: 280px;
+    transition: .25s;
+    text-align: center;
+}
+
+.hang2-ao3:hover {
+    background: url(img/h2\ 3.png);
+    cursor: pointer;
+}
+
+.hang2-ao4 {
+    background: url(img/Rectangle\ 17.png);
+    width: 203px;
+    height: 280px;
+    transition: .25s;
+    text-align: center;
+}
+
+.hang2-ao4:hover {
+    background: url(img/h2\ 4.png);
+    cursor: pointer;
+}
+
+.hang2-ao5 {
+    background: url(img/Rectangle\ 18.png);
+    width: 203px;
+    height: 280px;
+    transition: .25s;
+    text-align: center;
+}
+
+.hang2-ao5:hover {
+    background: url(img/h2\ 5.png);
+    cursor: pointer;
+}
+/* ====================================================san pham 3 */
+.hang3-ao1 {
+    background: url(img/Rectangle\ 19.png);
+    width: 203px;
+    height: 280px;
+    text-align: center;
+}
+
+.hang3-ao1:hover {
+    background: url(img/h3\ 1.jpg);
+    background-size: cover;
+    cursor: pointer;
+}
+
+.hang3-ao2 {
+    background: url(img/Rectangle\ 19\ \(1\).png);
+    width: 203px;
+    height: 280px;
+    transition: .25s;
+    text-align: center;
+}
+
+.hang3-ao2:hover {
+    background: url(img/h3\ 2.png);
+    cursor: pointer;
+}
+
+.hang3-ao3 {
+    background: url(img/Rectangle\ 20.png);
+    width: 203px;
+    height: 280px;
+    transition: .25s;
+    text-align: center;
+}
+
+.hang3-ao3:hover {
+    background: url(img/h3\ 3.png);
+    cursor: pointer;
+}
+
+.hang3-ao4 {
+    background: url(img/Rectangle\ 21.png);
+    width: 203px;
+    height: 280px;
+    transition: .25s;
+    text-align: center;
+}
+
+.hang3-ao4:hover {
+    background: url(img/h3\ 4.png);
+    cursor: pointer;
+}
+
+.hang3-ao5 {
+    background: url(img/Rectangle\ 22.png);
+    width: 203px;
+    height: 280px;
+    text-align: center;
+}
+
+.hang3-ao5:hover {
+    background: url(img/h3\ 5.jpg);
+    background-size: cover;
+    cursor: pointer;
+}
+/* ====================================================san pham 4 */
+.hang4-ao1 {
+    background: url(img/Rectangle\ 26.png);
+    width: 203px;
+    height: 280px;
+    transition: .25s;
+    text-align: center;
+}
+
+.hang4-ao1:hover {
+    background: url(img/h4\ 1.png);
+    cursor: pointer;
+}
+
+.hang4-ao2 {
+    background: url(img/Rectangle\ 29.png);
+    width: 203px;
+    height: 280px;
+    transition: .25s;
+    text-align: center;
+}
+
+.hang4-ao2:hover {
+    background: url(img/h4\ 2.png);
+    cursor: pointer;
+}
+
+.hang4-ao3 {
+    background: url(img/Rectangle\ 25.png);
+    width: 203px;
+    height: 280px;
+    transition: .25s;
+    text-align: center;
+}
+
+.hang4-ao3:hover {
+    background: url(img/h4\ 3.png);
+    cursor: pointer;
+}
+
+.hang4-ao4 {
+    background: url(img/Rectangle\ 24.png);
+    width: 203px;
+    height: 280px;
+    text-align: center;
+}
+
+.hang4-ao4:hover {
+    background: url(img/h4\ 4.jpg);
+    background-size: cover;
+    cursor: pointer;
+}
+
+.hang4-ao5 {
+    background: url(img/Rectangle\ 23.png);
+    width: 203px;
+    height: 280px;
+    transition: .25s;
+    text-align: center;
+}
+
+.hang4-ao5:hover {
+    background: url(img/h4\ 5.png);
+    cursor: pointer;
+}
+/* =======================================================footer */
+footer{
+    background-color: #353535;
+    width: 100%;
+    height: 379px;
+    position: relative;
+}
+.logo-footer img{
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
+.lienhe-footer{
+    position: absolute;
+    width: 350px;
+    left: 165px;
+    top: 165px;
+}
+.lienhe-footer p{
+    width: 350px;
+    color: #9FAC9F;
+    position: absolute;
+    margin-left: 40px;
+    margin-top: -22px;
+}
+.bor{
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 100%;
+    text-align: center;
+}
+#location{
+    margin-top: -12px;
+}
+#phone{
+    margin-top: 4px;
+}
+#email{
+    margin-top: 5px;
+}
+.diachi, .mail{
+    padding: 30px 0;
+}
+.diachi p:hover{
+    color: #fff;
+    cursor: pointer;
+}
+.phone p:hover{
+    color: #fff;
+    cursor: pointer;
+}
+.mail p:hover{
+    color: #fff;
+    cursor: pointer;
+}
+.thongtin{
+    width: 62%;
+    margin-left: 38%;
+    position: absolute;
+    margin-top: 110px;
+    display: flex;
+    justify-content: center;
+}
+.taikhoan, .chinhsach , .dieukhoan, .huongdan{
+    width: 200px;
+}
+.taikhoan li, .chinhsach li , .dieukhoan li, .huongdan li{
+    padding: 10px;
+    color:#8B8B8B;
+}
+.taikhoan li a, .chinhsach li a, .dieukhoan li a, .huongdan li a{
+    color: #8B8B8B;
+}
+.taikhoan li a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.chinhsach li a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.dieukhoan li a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.huongdan li a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.huongdan li a{
+    border: none;
+}
+.huongdan li:hover a{
+    background-color: #353535;
+}
+#white{
+    color: white;
+    font-size: 17px;
+}
+.end{
+    padding: 0 135px;
+    position: absolute;
+    background-color: #111111;
+    height: 60px;
+    width: 100%;
+    margin-top: 380px;
+    display: flex;
+    justify-content: space-between;
+}
+.end a{
+    color: #8B8B8B;
+}
+.end li{
+    display: inline-block;
+    line-height: 60px;
+    padding: 0 20px;
+}
+.end li a:hover{
+    color: white;
+}
+/* ===================================================form */
